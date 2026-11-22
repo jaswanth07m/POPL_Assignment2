@@ -19,8 +19,8 @@ description: Develop and review CS F301 Scheme assignment code in Racket 8.x und
 From the repository root, load each assignment module with:
 
 ```sh
-racket code/id_q3.rkt
-racket code/id_q4.rkt
+racket code/70_q3.rkt
+racket code/70_q4.rkt
 ```
 
 These files should load without printing. To exercise functions, use a grader-style test copy with the test calls placed after the definitions, then run `racket <test-copy.rkt>`. Keep calls and test output out of the submitted solution files; the grader appends its own calls.

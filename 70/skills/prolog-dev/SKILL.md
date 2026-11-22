@@ -18,13 +18,13 @@ description: Develop and review CS F301 Prolog assignment code using SWI-Prolog 
 From the repository root, run the P1 program with:
 
 ```sh
-swipl -q -f code/id_q1.pl -g main -t halt
+swipl -q -f code/70_q1.pl -g main -t halt
 ```
 
 Run an individual predicate goal with:
 
 ```sh
-swipl -q -f code/id_q1.pl -g "<goal>" -t halt
+swipl -q -f code/70_q1.pl -g "<goal>" -t halt
 ```
 
 For example, test a clue with a ground solution by supplying `clue(1, [...])` as the goal. To inspect a result such as a count, the command-line goal may print that result; keep such test output separate from the submitted program's required output.

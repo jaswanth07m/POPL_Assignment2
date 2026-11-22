@@ -1,4 +1,4 @@
-:- consult('../code/id_q1.pl').
+:- consult('../code/70_q1.pl').
 
 % This complete assignment is the shared positive fixture for clues 1 through 9.
 sample_solution([p('Alex', design, java, embedded),
@@ -207,3 +207,32 @@ run_p1_tests :-
     check_success('count clues 1 through 9', count_clues_1_through_9),
     check_success('count empty active list', count_empty_active_list),
     check_success('main output format', main_has_exact_output_format).
+
+:- use_module(library(plunit)).
+:- begin_tests(p1).
+
+test(clue_1_positive) :- user:clue_1_positive.
+test(clue_1_negative) :- user:clue_1_negative.
+test(clue_2_positive) :- user:clue_2_positive.
+test(clue_2_negative) :- user:clue_2_negative.
+test(clue_3_positive) :- user:clue_3_positive.
+test(clue_3_negative) :- user:clue_3_negative.
+test(clue_4_positive) :- user:clue_4_positive.
+test(clue_4_negative) :- user:clue_4_negative.
+test(clue_5_positive) :- user:clue_5_positive.
+test(clue_5_negative) :- user:clue_5_negative.
+test(clue_6_positive) :- user:clue_6_positive.
+test(clue_6_negative) :- user:clue_6_negative.
+test(clue_7_positive) :- user:clue_7_positive.
+test(clue_7_negative) :- user:clue_7_negative.
+test(clue_8_positive) :- user:clue_8_positive.
+test(clue_8_negative) :- user:clue_8_negative.
+test(clue_9_positive) :- user:clue_9_positive.
+test(clue_9_negative) :- user:clue_9_negative.
+test(solution_generates_valid_assignment) :- user:solution_generates_valid_assignment.
+test(count_clues_1_through_8) :- user:count_clues_1_through_8.
+test(count_clues_1_through_9) :- user:count_clues_1_through_9.
+test(count_empty_active_list) :- user:count_empty_active_list.
+test(main_has_exact_output_format) :- user:main_has_exact_output_format.
+
+:- end_tests(p1).

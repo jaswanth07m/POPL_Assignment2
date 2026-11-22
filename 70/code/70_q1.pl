@@ -1,10 +1,10 @@
 :- use_module(library(lists), [permutation/2]).
 
 % Clue 1: The friend who prefers the AI project does not work in research and is not Dana.
-clue(1, [p('Alex', AlexDept, AlexProject, AlexProjectPref),
-         p('Ben', BenDept, BenLang, BenProject),
-         p('Carla', CarlaDept, CarlaLang, CarlaProject),
-         p('Dana', DanaDept, DanaLang, DanaProject)]) :-
+clue(1, [p('Alex', AlexDept, _, AlexProjectPref),
+         p('Ben', BenDept, _, BenProject),
+         p('Carla', CarlaDept, _, CarlaProject),
+         p('Dana', _, _, DanaProject)]) :-
     ( AlexProjectPref = 'AI',
       AlexDept \= research,
       BenProject \= 'AI',
@@ -84,6 +84,15 @@ clue(8, [p('Alex', AlexDept, AlexLang, AlexProject),
     ( CarlaProject \= data ; (CarlaDept = research, CarlaLang \= javascript) ),
     ( DanaProject \= data ; (DanaDept = research, DanaLang \= javascript) ).
 
+% CLUE 9: The friend who prefers the AI project likes Python.
+clue(9, [p('Alex', _, AlexLang, AlexProject),
+         p('Ben', _, BenLang, BenProject),
+         p('Carla', _, CarlaLang, CarlaProject),
+         p('Dana', _, DanaLang, DanaProject)]) :-
+    ( AlexProject \= 'AI' ; AlexLang = python ),
+    ( BenProject \= 'AI' ; BenLang = python ),
+    ( CarlaProject \= 'AI' ; CarlaLang = python ),
+    ( DanaProject \= 'AI' ; DanaLang = python ).
 % Generate permutations of each attribute, then keep assignments satisfying all clues.
 solution([p('Alex', AlexDept, AlexLang, AlexProject),
           p('Ben', BenDept, BenLang, BenProject),
@@ -155,13 +164,3 @@ count_solutions(Active, N) :-
             ),
             Solutions),
     length(Solutions, N).
-
-% CLUE 9: The friend who prefers the AI project likes Python.
-clue(9, [p('Alex', _, AlexLang, AlexProject),
-         p('Ben', _, BenLang, BenProject),
-         p('Carla', _, CarlaLang, CarlaProject),
-         p('Dana', _, DanaLang, DanaProject)]) :-
-    ( AlexProject \= 'AI' ; AlexLang = python ),
-    ( BenProject \= 'AI' ; BenLang = python ),
-    ( CarlaProject \= 'AI' ; CarlaLang = python ),
-    ( DanaProject \= 'AI' ; DanaLang = python ).

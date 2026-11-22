@@ -1,12 +1,11 @@
 #lang racket/base
 
 (require rackunit
-         racket/namespace
          racket/runtime-path)
 
 ;; The solution module does not export its definitions; use its namespace to
-;; exercise the existing implementation without changing code/id_q3.rkt.
-(define-runtime-path implementation-module "../code/id_q3.rkt")
+;; exercise the existing implementation without changing 70/code/70_q3.rkt.
+(define-runtime-path implementation-module "../code/70_q3.rkt")
 (dynamic-require implementation-module #f)
 (define implementation-namespace
   (module->namespace implementation-module))

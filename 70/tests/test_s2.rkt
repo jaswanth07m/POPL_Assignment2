@@ -1,11 +1,10 @@
 #lang racket/base
 
 (require rackunit
-         racket/namespace
          racket/runtime-path)
 
 ;; Access private definitions from the existing implementation without editing it.
-(define-runtime-path implementation-module "../code/id_q4.rkt")
+(define-runtime-path implementation-module "../code/70_q4.rkt")
 (dynamic-require implementation-module #f)
 (define implementation-namespace
   (module->namespace implementation-module))
